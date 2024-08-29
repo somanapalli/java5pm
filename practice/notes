@@ -1,0 +1,294 @@
+
+
+public class Test1 {
+
+	//variables
+	
+	 static int stid =100;
+	 static String stname="suma";
+	 static float stmarks = 98.5f;
+	 static char grade='A';
+	 static boolean isActive = true;
+	
+	//method defining to display the values
+	 public static void display()
+	 {
+		 System.out.println("student id is : " + stid);
+		 System.out.println("studetn name is: " + stname);
+		 System.out.println("student marks are : " + stmarks);
+		 System.out.println("student grade is: " + grade);
+		 System.out.println("io student is active or not:?" + isActive);
+	 }
+	
+	
+   //main method 
+	 public static void main(String[] args) {
+		
+		 //call display()
+		 display();
+		
+	}
+	
+	
+	
+	
+}
+
+
+object:
+````````
+instance of a class is known as object
+
+
+
+instance: 
+
+allocating memory spaces for instance or non-static properties which we are defining 
+inside the class.
+
+
+
+public class Test1 {
+
+	//non static variables or instance variable
+	
+	  int stid;
+	  String stname;
+	  float stmarks;
+	  char grade;
+	  boolean isActive;
+	  static String collegeName;
+	  
+	
+	  public static void display()
+	  {
+		
+		  //static area
+		  System.out.println("=======================================");
+		  System.out.println("student id is: " + (new Test1().stid=200));
+		  System.out.println("student name is:" +(new Test1().stname="rk"));
+		  System.out.println("student marks are :" + (new Test1().stmarks=93.5f));
+		  System.out.println("student grade is: " + (new Test1().grade='A'));
+		  System.out.println("student is active or not?" + (new Test1().isActive=true));
+		  
+		  
+	  }
+	
+	
+   //main method 
+	 public static void main(String[] args) {
+		
+		 //static area
+		 //create the object
+		 
+		 Test1 suma = new Test1();
+		 
+		 suma.stid=100;
+		 suma.stname="suma";
+		 suma.stmarks=98.5f;
+		 suma.grade='A';
+		 suma.isActive=true;
+		 collegeName="CBIT";
+		
+		 System.out.println("student id is: " + suma.stid);
+		 System.out.println("student name is: " + suma.stname);
+		 System.out.println("student marks are: " + suma.stmarks);
+		 System.out.println("student grade is: " + suma.grade);
+		 System.out.println("student is active or not?:" + suma.isActive);
+		 System.out.println("student collegename is:" + suma.collegeName);
+		 
+		 Test1 jd = new Test1();
+		 jd.stid=101;
+		 jd.stname="jagadeesh";
+		 jd.stmarks=99.5f;
+		 jd.grade='A';
+		 jd.isActive=true;
+		 collegeName="CBIT";
+		 System.out.println("==============================================");
+		 System.out.println("student id is: " + jd.stid);
+		 System.out.println("student name is: " + jd.stname);
+		 System.out.println("student marks are: " + jd.stmarks);
+		 System.out.println("student grade is: " + jd.grade);
+		 System.out.println("student is active or not?:" + jd.isActive);
+		 System.out.println("student collegename is:" + jd.collegeName);
+		 
+		 
+		 //call display()
+		 
+		 display();
+		 
+		 
+		 
+	}
+	
+	
+	
+	
+}
+
+
+without constructor one example:
+```````````````````````````````
+
+public class Test2 {
+	
+	//declaring the variable
+	int stid;
+	String stname;
+	
+	
+	//assign the values 
+	
+	public void assignValues()
+	{
+		stid=100;
+		stname="Ram";
+		
+	}
+	
+	//display the values
+	
+	public void display()
+	{
+		System.out.println("student id is: " + stid);
+		System.out.println("student name is: " + stname);
+		
+	}
+	//main method
+	
+	public static void main(String[] args)
+	{
+		//static area
+		//create the object 
+		Test2 obj = new Test2();
+		
+		//call assignValues()
+		obj.assignValues();
+		//call display()
+		obj.display();
+		
+		
+	}
+	
+
+}
+
+
+with constructor
+```````````````
+
+public class Test2 {
+	
+	//declaring the variable
+	int stid;
+	String stname;
+	
+	public Test2()
+	{
+		//initialization logic
+		stid=100;
+		stname="ram";
+	}
+	
+	
+	//display the values
+	
+	public void display()
+	{
+		System.out.println("student id is: " + stid);
+		System.out.println("student name is: " + stname);
+		
+	}
+	//main method
+	
+	public static void main(String[] args)
+	{
+		//static area
+		//create the object 
+		Test2 obj = new Test2();
+		
+		
+		//call display()
+		obj.display();
+		
+		
+	}
+	
+
+}
+
+rules:
+constructor name must be similar to class name 
+constructor should not return anything even void also
+constructor should not be inherited
+constructor should not be static
+
+
+
+
+purpose:
+to initialize the object 
+
+in a class, we can define maximum one default constructor 
+we can define n no.of parameterized constructor(s).
+
+
+
+this:
+this is the java reserved keyword, which is pointing to current class object. 
+
+we can use for two purposes
+
+1.whenever class level variables and constructor/method level parameters or variables 
+are same , to differentiate we should use this keyword
+
+
+public class Test2 {
+	
+	
+	int stid;
+	String stname;
+	//parameterized constructor 
+	
+	  public Test2(int stid, String stname)
+	  {
+		  this.stid=stid;
+		  this.stname=stname;
+	  }
+	 
+	public void display()
+	{
+		System.out.println("student id is:" + this.stid);
+		System.out.println("student name is: " + this.stname);
+	}
+	
+	public static void main(String[] args)
+	{
+		
+		//create the object using parameterized constructor
+		Test2 obj = new Test2(100,"ram");
+		
+		obj.display();
+		
+		
+		
+	}
+	
+
+}
+
+	
+2.	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
