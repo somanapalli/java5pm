@@ -278,15 +278,303 @@ public class Test2 {
 }
 
 	
-2.	
+2.	note:
+constructor always called whenever we create the object.
+for example i created 100 times object 
+so how many times constructor will be invoked?
+100 times
+
+
+public class Test4 {
+	
+	//variable declaration 
+	int stid;
+	String stname;
+	
+	//define the constructor
+	
+	Test4()
+	{
+		//initialization logic
+		stid=100;
+		stname="rama";
+	}
+	
+	public void display()
+	{
+		System.out.println("student id is: " + stid);
+		System.out.println("student name is:" + stname);
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		
+		Test4 obj = new Test4();
+		obj.display();
+	}
+
+}
+
+system generated default constructor responsibility is assign
+the default values based on the datatype category
+
+user defined default constructor responsisbility is to assign
+the our own values based on the requirement.
+
+user defiend parameterized cosntrcutor 
+
+responsibility: 
 	
 	
 
+public class Test4 {
+	
+
+	
+	//user defined parameterized constructor 
+	public Test4(int x, String y)
+	{
+		System.out.println("iam from parameterized constructor");
+	}
+	
+	//user defined default constructor
+	public Test4() {
+		//call the above constructor 
+		this(4,"suma");
+		System.out.println("iam from default constructor");
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		Test4 obj1 = new Test4();
+		
+		
+	}
+
+}
+
+--
+
+public class Test4 {
+	//class level variables
+	int stid;
+	String stname;
+
+	//user defined parameterized constructor 
+	public Test4(int stid, String stname)
+	{
+	   this.stid=stid;
+	   this.stname=stname;
+	}
+	
+	public void display()
+	{
+		System.out.println("student id is: " + this.stid);
+		System.out.println("student name is: " + this.stname);
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		Test4 obj1 = new Test4(100,"rk");
+		
+		obj1.display();
+		
+		
+	}
+
+}
 
 
+this
+`````
+this is the java reserved keyword 
+
+we are using in two areas
+
+1.to differentiate class level and method level parameters 
+  when both are same
+  
+2.to call current class constructor(s) from other constructor(s).
+
+note:
+using this(),this(..) must be the first executable statement 
+inside the constructor 
+
+note:
+constructor calling is from top to bottom but 
+execution is from bottom to top.
 
 
+public class Test5 {
+	
+	public static void main(String[] args) {
+		
+		
+		String s1 = args[0];
+		
+		int fno = Integer.parseInt(s1);
+		
+		String s2 = args[1];
+		
+		int sno = Integer.parseInt(s2);
+		
+		int result = fno + sno;
+		
+		System.out.println("sum is:  "  + result);
+	}
 
+}
+
+--
+
+public class Test5 {
+	
+	public static void main(String[] args) {
+		
+     System.out.println("sum is:  "  + (Integer.parseInt(args[0])+Integer.parseInt(args[1])));
+	}
+
+}
+
+note:
+whatever the data we are passing during execution of the program 
+that data will be considering as an arugments to the main method 
+
+by default , it will be considering as string type.
+
+based on the requirement, we can convert from String type to 
+required type(s) using parser methods of Wrapper classes. 
+
+
+control statements:
+purpose:
+to control the flow of execution based on certain conditions.
+
+if statement
+if-else statement
+if-else-if ladder
+switch case
+for loop 
+while loop
+dowhile
+break
+continue
+foreach 
+
+
+if statement:
+executes a block of code if a specified condition is true. 
+
+syntax:
+ if(condition)
+ {
+   //code to execute
+   }
+   
+if-else statement:
+executes one block of code if the condition is true, and 
+another block if it is false. 
+
+if(condition)
+{
+}
+else
+{
+}
+
+
+public class Test6 {
+	
+	public static void main(String[] args) {
+		
+		int num=11;
+		if(num%2==0)
+		{
+			System.out.println(num + " is even number");
+		}
+		else
+		{
+			System.out.println(num + " is odd number");
+		}
+		
+	}
+
+}
+
+if-else-if ladder:
+``````````````````
+multiple conditions can be checked sequentially.
+
+public class Test6 {
+	
+	public static void main(String[] args) {
+		
+		int num=7;
+		if(num>10)
+		{
+			System.out.println("number is greater than 10");
+		}
+		else if(num > 5)
+		{
+			System.out.println("number is greater than 5");
+		}
+		else if(num >20 )
+		{
+			System.out.println("number is greater than 20");
+		}
+		else
+		{
+			System.out.println("number is 5 or less");
+		}
+		
+	}
+
+}
+
+switch case:
+this is used to execute one of many code blocks based on the 
+value of an expression .
+
+
+swtich(expression){
+ 
+   case value1:
+     //code for value1
+     break;
+   case value2;
+     //code for value2
+     break;
+     ....
+     
+   default:
+      //default code if no cases match
+      }
+
+
+public class Test7 {
+	public static void main(String[] args) {
+		
+		int a=10,b=5;
+		int max = (a<b)?a:b;
+		System.out.println("min value: " + max);
+	}
+	
+
+}
+
+
+loops in java:
+for
+while
+dowhile
+foreach
 
 
 
