@@ -705,5 +705,121 @@ public class Test10 {
 
 }
 
+---
+
+public class Test11 {
+	
+	public void sum(int x, int y)
+	{
+		System.out.println("integer sum is: " +(x+y));
+	}
+	
+	public void sum(double x, double y)
+	{
+		System.out.println("double sum is: " + (x+y));
+	}
+
+    public static void main(String[] args) {
+    	int x;//x is a variable of int type
+    	
+		Test11 obj;//obj is also a variable of Test11 type
+		obj= new Test11();//object referencing
+		
+		
+		obj.sum(7, 6);
+		obj.sum(4.5, 5.6);
+    	
+	}
+}
+
+note:
+method overloading:
+it is the process of defining same method by changing 
+signature
+ 
+ signature -> no.of parameters
+   ->type of parameters
+   ->atleast order of parameters
+   
+ note:
+ single class is enough to perfrom or to achieve 
+ method overloading or compiletime polymorphism
+ 
+   
+method overriding:
+``````````````````
+method name is same 
+but logic is different from parent class to child class.
+
+class Parent
+{
+  public void sum(){x+y}
+  
+}
+class Child extends Parent
+{
+public void sum(){x-y}
+}
+
+why should i go for method overriding:
+```````````````````````````````````
+if already logic was there in parent class method 
+that logic is not meeting my requirement 
+then take the method and provide your own logic.
+
+class Parent
+{
+  marriage()
+  {
+    System.out.println("arranged marriage");
+    
+  }
+}
+
+class Child extends Parent
+{
+
+   marriage()
+   {
+   System.out.println("love marriage");
+   }
+   
+}
+
+
+--
+
+public class Parent {
+
+	public void sum(int x, int y)
+	{
+		System.out.println("sum is:" + (x+y));
+	}
+}
+
+
+runtime polymorphism:
+```````````````````````
+the polymorphism can be decided during the runtime by the jvm
+based on the object type 
+is known as runtime polymorphism. 
+
+if method calling will be binded to particular method based 
+on the reference variable is known as compile time polymorphism. 
+
+
+method overloading is the best example for achieving 
+compile time polymorphism 
+
+method overriding is the best example for achieving 
+runtime polymorphism. 
+
+
+
+
+
+
+
+
 
 
