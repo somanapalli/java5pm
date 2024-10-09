@@ -883,6 +883,75 @@ java.util.stream
 java.util.zip
 
 
+access modifiers
+
+typecasting:
+type casting in java referes to the process of 
+converting one data type into another.
+
+It is mainly categorized into two types.
+
+  1.implicit type casting(widening type casting or automatic type conversion)
+  2.explicit type casting(narrowing or manual type conversion)
+
+smaller to larger datatypes
+(int -> long , float -> double)
+
+no data loss or prcesion issues
+
+java automatically handles this conversion 
+
+byte -> short -> int -> long -> float -> double 
+
+explicit type casting:
+
+larger to smaller data type
+
+(double -> int, long -> short)
+
+the programmer needs to explicitly specify the conversion 
+using casting syntax.
+double -> float -> long -> int -> short
+-> byte
+
+widening type casting (smaller to larger) 
+is safe and automatic
+
+narrowing type casting (larger to smaller)
+requires explicit casting and may lose data. 
+
+typecasting 
+
+
+
+
+
+exception handling:
+```````````````````
+compile time errors
+running the program - errors
+
+
+jvm -> needs always valid input
+
+if you pass invalid input 
+-jvm couldn't process 
+-jvm will give you the errors
+-runtime errors 
+-exception 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
