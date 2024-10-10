@@ -11,7 +11,7 @@ public class Test5 {
 		Student student1 = new Student(100,"jagadeesh");
 		Student student2 = new Student(101,"suma");
 		
-	al.add(student1);
+	    al.add(student1);
 		al.add(student2);
 		
 		System.out.println(al);
